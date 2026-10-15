@@ -1,0 +1,184 @@
+/* love-diary — page styles (built on css/theme.css) */
+
+.diary-hero {
+  padding-block: clamp(2.5rem, 7vw, 5rem) clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.small-caption {
+  max-width: 44ch;
+  margin: 0.35rem auto 0.5rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ---------- today ---------- */
+
+.prompt-card {
+  margin: 1.2rem 0 0;
+  padding: 1rem 1.2rem;
+  border: 1px dashed var(--pink-strong);
+  border-radius: 16px;
+  background: linear-gradient(150deg, rgba(255, 182, 216, 0.12), rgba(255, 255, 255, 0.02));
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.prompt-card strong {
+  color: var(--text);
+}
+
+.diary-form {
+  display: grid;
+  gap: 0.9rem;
+  max-width: 680px;
+  margin-top: 1.4rem;
+}
+
+.diary-row {
+  display: grid;
+  grid-template-columns: minmax(0, 200px) auto;
+  gap: 1rem;
+  align-items: end;
+}
+
+.field {
+  display: block;
+}
+
+.field > span {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.field textarea,
+.field select {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  font: inherit;
+  resize: vertical;
+}
+
+.field textarea:focus,
+.field select:focus {
+  outline: none;
+  border-color: var(--pink);
+}
+
+.diary-row .button {
+  height: fit-content;
+}
+
+/* ---------- meta chips ---------- */
+
+.diary-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1.2rem;
+}
+
+.diary-chip {
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 0.82rem;
+}
+
+.diary-chip strong {
+  color: var(--pink);
+}
+
+/* ---------- entries timeline ---------- */
+
+.entry-list {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.6rem;
+}
+
+.entry {
+  position: relative;
+  padding: 1.1rem 1.2rem 1.1rem 1.4rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--panel);
+}
+
+.entry::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 14px;
+  bottom: 14px;
+  width: 4px;
+  border-radius: 4px;
+  background: linear-gradient(180deg, var(--pink), var(--purple));
+}
+
+.entry-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.entry-day {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.1rem;
+}
+
+.entry-mood {
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(255, 159, 207, 0.2);
+  color: var(--pink);
+  font-size: 0.72rem;
+  text-transform: capitalize;
+}
+
+.entry-prompt {
+  display: block;
+  margin-top: 0.3rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.entry-text {
+  margin: 0.8rem 0 0;
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+
+.entry-remove {
+  margin-top: 0.9rem;
+  border: none;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.76rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.entry-empty {
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 560px) {
+  .diary-row {
+    grid-template-columns: 1fr;
+  }
+}
