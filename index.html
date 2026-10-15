@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b20">
+  <meta name="description" content="Our Diary — a small dated note for each day, kept just for Mena.">
+  <title>Our Diary ✦ Love for Mena</title>
+  <link rel="canonical" href="https://menaammarpro.github.io/love-diary/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Our Diary — for Mena">
+  <meta property="og:title" content="Our Diary ✦ Love for Mena">
+  <meta property="og:description" content="A small dated note for each day, kept just for the two of us.">
+  <meta property="og:url" content="https://menaammarpro.github.io/love-diary/">
+  <meta property="og:image" content="https://menaammarpro.github.io/love-diary/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Our Diary — a note for each day">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Our Diary ✦ Love for Mena">
+  <meta name="twitter:description" content="A small dated note for each day, kept just for the two of us.">
+  <meta name="twitter:image" content="https://menaammarpro.github.io/love-diary/assets/og-image.png">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="js/theme-main.js" defer></script>
+  <script src="js/effects.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Our Diary">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <a class="brand" href="index.html">✎ Our Diary</a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">Menu</button>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a class="active" href="index.html">Home</a>
+      <a href="#today">Today</a>
+      <a href="#entries">Entries</a>
+      <a href="#details">Details</a>
+      <a href="https://menaammarpro.github.io/loveformymena/">Our little universe ↗</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle color theme">Theme</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero diary-hero">
+      <p class="eyebrow">ONE NOTE A DAY</p>
+      <div class="moon" aria-hidden="true">✎</div>
+      <p class="small-caption">A page a day, in both our handwriting.</p>
+      <h1>Our <span>diary.</span></h1>
+      <p class="hero-description">
+        One small entry for each day — how it felt, what happened, what I noticed.
+        Read back through it and you'll find us in the margins. Saved on this
+        device, just for the two of us.
+      </p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#today">Write today's entry <span>♥</span></a>
+        <a class="button button-ghost" href="#entries">Read back</a>
+      </div>
+      <p class="signature">Made with love, just for you <span>♥</span></p>
+    </section>
+
+    <section class="section" id="today">
+      <p class="eyebrow" id="today-date">TODAY</p>
+      <h2>Today's <span>entry.</span></h2>
+      <p class="prompt-card">Today's little prompt: <strong id="prompt-text"></strong></p>
+      <div class="diary-form">
+        <label class="field">
+          <span>Your note</span>
+          <textarea id="entry-text" maxlength="1400" rows="6" placeholder="How was today? What made you think of her?" aria-label="Diary entry"></textarea>
+        </label>
+        <div class="diary-row">
+          <label class="field">
+            <span>Mood</span>
+            <select id="mood-select" aria-label="Mood">
+              <option value="">—</option>
+              <option value="happy">Happy</option>
+              <option value="calm">Calm</option>
+              <option value="missing">Missing you</option>
+              <option value="tired">Tired</option>
+              <option value="excited">Excited</option>
+              <option value="grateful">Grateful</option>
+            </select>
+          </label>
+          <button class="button button-primary" id="save-entry" type="button">Save today's entry <span>♥</span></button>
+        </div>
+      </div>
+      <p class="section-note" id="entry-note" aria-live="polite"></p>
+    </section>
+
+    <section class="section" id="entries">
+      <p class="eyebrow">THE PAGES SO FAR</p>
+      <h2>All our <span>days.</span></h2>
+      <div class="diary-meta">
+        <span class="diary-chip"><strong id="diary-count">0</strong> entries</span>
+        <span class="diary-chip"><strong id="diary-streak">0</strong> day streak</span>
+      </div>
+      <div class="entry-list" id="entry-list"></div>
+    </section>
+
+    <section class="section" id="details">
+      <p class="eyebrow">JUST FOR US</p>
+      <h2>Details.</h2>
+      <div class="settings-actions">
+        <button class="button button-ghost" id="share-button" type="button">Share this page</button>
+        <button class="button button-ghost" id="reset-diary" type="button">Empty the diary</button>
+      </div>
+      <p class="settings-note" id="save-note" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Made with care <span>♥</span> for Mena</p>
+    <p class="footer-small">A little universe of its own ✦</p>
+  </footer>
+</body>
+</html>
