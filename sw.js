@@ -1,6 +1,6 @@
 "use strict";
 
-const CACHE = "our-diary-v1";
+const CACHE = "our-diary-v2";
 
 const ASSETS = [
   "./",
